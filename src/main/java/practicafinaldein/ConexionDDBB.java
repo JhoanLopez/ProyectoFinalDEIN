@@ -27,7 +27,7 @@ public class ConexionDDBB {
             try {
                 conexion = DriverManager.getConnection(url); 
                 String guion = "--------------------";
-                System.out.println(guion + " CONECTADO CON LA BASE DE DATOS " + guion);
+                System.out.println(guion + " CONECTADzO CON LA BASE DE DATOS " + guion);
             } catch (SQLException ex) {
                 System.out.print("ERROR CONEXIÓN CON BASE DE DATOS: ");
                 System.out.println(ex);
