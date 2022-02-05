@@ -17,7 +17,7 @@ import java.util.Properties;
 
 public class ConexionDDBB {
     
-    public static void ConectarDBSQLITE () {
+    public static Connection ConectarDBSQLITE () {
         Properties properties = new Properties();
         Connection conexion = null;
         
@@ -39,5 +39,6 @@ public class ConexionDDBB {
             System.out.print("ERROR: ");
             System.out.println(ex);
         } 
+        return conexion;
     } 
 }

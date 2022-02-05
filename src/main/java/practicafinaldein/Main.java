@@ -1,5 +1,7 @@
 package practicafinaldein;
 
+import java.sql.Connection;
+
 /**
  * @date 2 feb. 2022
  * @author Jhoan López
@@ -9,6 +11,6 @@ package practicafinaldein;
 public class Main {
     
     public static void main (String [] args) {   
-        ConexionDDBB.ConectarDBSQLITE();
+        Connection conexion = ConexionDDBB.ConectarDBSQLITE();
     }
 }
