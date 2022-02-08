@@ -1,14 +1,13 @@
 package practicafinaldein;
 
 /**
- *
+ * @date 2 feb. 2022
  * @author Jhoan López
+ * @email Jhoanlopezclase@gmail.com
  */
+
 public class CarnetBPantalla extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BienvenidosPantalla
-     */
     public CarnetBPantalla() {
         initComponents();
         asignarImg.asignarImagenes("CarnetB.png", jl_categoriaElegida);
