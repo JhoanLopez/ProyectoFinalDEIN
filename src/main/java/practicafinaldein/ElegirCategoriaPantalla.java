@@ -4,15 +4,15 @@ package practicafinaldein;
  *
  * @author Jhoan López
  */
-public class ElegirCategoria extends javax.swing.JFrame {
+public class ElegirCategoriaPantalla extends javax.swing.JFrame {
 
     /**
      * Creates new form BienvenidosPantalla
      */
-    public ElegirCategoria() {
+    public ElegirCategoriaPantalla() {
         initComponents();
 
-        asignarImg.asignarImagenes("ElegirCategoria.png", jl_elegirCategoria);
+        asignarImg.asignarImagenes("ElegirCategoria.png", jl_categoriaElegida);
     }
     
     AsignarImagen asignarImg = new AsignarImagen();
@@ -26,7 +26,7 @@ public class ElegirCategoria extends javax.swing.JFrame {
     private void initComponents() {
 
         jp_fondoFrame = new javax.swing.JPanel();
-        jl_elegirCategoria = new javax.swing.JLabel();
+        jl_categoriaElegida = new javax.swing.JLabel();
         jb_carnetA = new javax.swing.JButton();
         jb_carnetB = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -41,13 +41,13 @@ public class ElegirCategoria extends javax.swing.JFrame {
         jp_fondoFrame.setBackground(new java.awt.Color(248, 249, 249));
         jp_fondoFrame.setPreferredSize(new java.awt.Dimension(1200, 600));
 
-        jl_elegirCategoria.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
-        jl_elegirCategoria.setForeground(new java.awt.Color(51, 51, 51));
-        jl_elegirCategoria.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl_elegirCategoria.setMaximumSize(new java.awt.Dimension(610, 55));
-        jl_elegirCategoria.setMinimumSize(new java.awt.Dimension(610, 55));
-        jl_elegirCategoria.setName(""); // NOI18N
-        jl_elegirCategoria.setPreferredSize(new java.awt.Dimension(440, 55));
+        jl_categoriaElegida.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        jl_categoriaElegida.setForeground(new java.awt.Color(51, 51, 51));
+        jl_categoriaElegida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_categoriaElegida.setMaximumSize(new java.awt.Dimension(610, 55));
+        jl_categoriaElegida.setMinimumSize(new java.awt.Dimension(610, 55));
+        jl_categoriaElegida.setName(""); // NOI18N
+        jl_categoriaElegida.setPreferredSize(new java.awt.Dimension(440, 55));
 
         jb_carnetA.setBackground(new java.awt.Color(129, 199, 132));
         jb_carnetA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -139,7 +139,7 @@ public class ElegirCategoria extends javax.swing.JFrame {
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addGap(380, 380, 380)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_elegirCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_categoriaElegida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +153,7 @@ public class ElegirCategoria extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(jl_elegirCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jl_categoriaElegida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(jb_carnetA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
@@ -168,7 +168,9 @@ public class ElegirCategoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_carnetAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_carnetAActionPerformed
-        // TODO add your handling code here:
+        CarnetAPantalla carnetA = new CarnetAPantalla();
+        this.setVisible(false);
+        carnetA.setVisible(true);
     }//GEN-LAST:event_jb_carnetAActionPerformed
 
     private void jl_minimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_minimizarMouseClicked
@@ -180,7 +182,9 @@ public class ElegirCategoria extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_cerrarMouseClicked
 
     private void jb_carnetBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_carnetBActionPerformed
-        // TODO add your handling code here:
+        CarnetBPantalla carnetB = new CarnetBPantalla();
+        this.setVisible(false);
+        carnetB.setVisible(true);
     }//GEN-LAST:event_jb_carnetBActionPerformed
 
     /**
@@ -200,21 +204,23 @@ public class ElegirCategoria extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ElegirCategoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirCategoriaPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ElegirCategoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirCategoriaPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ElegirCategoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirCategoriaPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ElegirCategoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirCategoriaPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ElegirCategoria().setVisible(true);
+                new ElegirCategoriaPantalla().setVisible(true);
             }
         });
     }
@@ -223,8 +229,8 @@ public class ElegirCategoria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton jb_carnetA;
     private javax.swing.JButton jb_carnetB;
+    private javax.swing.JLabel jl_categoriaElegida;
     private javax.swing.JLabel jl_cerrar;
-    private javax.swing.JLabel jl_elegirCategoria;
     private javax.swing.JLabel jl_minimizar;
     private javax.swing.JPanel jp_fondoFrame;
     // End of variables declaration//GEN-END:variables

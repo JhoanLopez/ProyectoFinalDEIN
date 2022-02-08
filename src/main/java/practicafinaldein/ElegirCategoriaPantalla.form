@@ -55,7 +55,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jl_elegirCategoria" min="-2" max="-2" attributes="0"/>
+                      <Component id="jl_categoriaElegida" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -74,7 +74,7 @@
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="jl_elegirCategoria" min="-2" max="-2" attributes="0"/>
+                  <Component id="jl_categoriaElegida" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="120" max="32767" attributes="0"/>
                   <Component id="jb_carnetA" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -85,7 +85,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jl_elegirCategoria">
+        <Component class="javax.swing.JLabel" name="jl_categoriaElegida">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="40" style="1"/>

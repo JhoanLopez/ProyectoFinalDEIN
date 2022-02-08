@@ -221,7 +221,7 @@ public class BienvenidosPantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_empezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_empezarActionPerformed
-        ElegirCategoria elegirCat = new ElegirCategoria();
+        ElegirCategoriaPantalla elegirCat = new ElegirCategoriaPantalla();
         this.setVisible(false);
         elegirCat.setVisible(true);
     }//GEN-LAST:event_jb_empezarActionPerformed
