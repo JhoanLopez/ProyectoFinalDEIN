@@ -2,6 +2,7 @@ package practicafinaldein;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.*;
 
 /**
  * @date 2 feb. 2022
@@ -21,9 +22,15 @@ public class TestCarnetB extends javax.swing.JFrame {
         numeroPreguntas = (Integer) CarnetBPantalla.opcionElegidaB.get(1);
         this.getNumerosRandom(numeroPreguntas);
         this.getPreguntas(numeroPreguntas);
+        this.asignarPreguntas(preguntaActual);
     }
     
+    public static Map pregunta = new HashMap();
+    public static Map respuesta = new HashMap();
+    public static Map incorrecta1 = new HashMap();
+    public static Map incorrecta2 = new HashMap();
     static int numeroPreguntas;
+    static int preguntaActual = 0;
     static int [] arrayNumeros;
     
     /**
@@ -193,11 +200,11 @@ public class TestCarnetB extends javax.swing.JFrame {
                         .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(340, 340, 340))))
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addGap(538, 538, 538)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jl_pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(538, 538, 538))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addGap(545, 545, 545)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -262,6 +269,11 @@ public class TestCarnetB extends javax.swing.JFrame {
                 var sentencia = conexion.prepareStatement(sentenciaBuscar);
                 var resultado = sentencia.executeQuery();
                 if (resultado.next()) {
+                    pregunta.put(i, resultado.getString("pregunta"));
+                    respuesta.put(i, resultado.getString("respuesta"));
+                    incorrecta1.put(i, resultado.getString("incorrecta1"));
+                    incorrecta2.put(i, resultado.getString("incorrecta2"));
+                    
                     System.out.println("PREGUNTA: " + resultado.getString("pregunta"));
                     System.out.println("RESPUESTA: " + resultado.getString("respuesta"));
                     System.out.println("INCORRECTA1: " + resultado.getString("incorrecta1"));
@@ -300,6 +312,13 @@ public class TestCarnetB extends javax.swing.JFrame {
             }
             contador++;
         }
+    }
+    
+    private void asignarPreguntas (Integer num) {
+        jl_pregunta.setText((String) pregunta.get(num));
+        jrb_opcionA.setText((String) respuesta.get(num));
+        jrb_opcionB.setText((String) incorrecta1.get(num));
+        jrb_opcionC.setText((String) incorrecta2.get(num));
     }
     
     /**

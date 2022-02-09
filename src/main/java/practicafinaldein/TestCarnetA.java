@@ -2,6 +2,8 @@ package practicafinaldein;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @date 2 feb. 2022
@@ -23,6 +25,10 @@ public class TestCarnetA extends javax.swing.JFrame {
         this.getPreguntas(numeroPreguntas);
     }
     
+    public static Map pregunta = new HashMap();
+    public static Map respuesta = new HashMap();
+    public static Map incorrecta1 = new HashMap();
+    public static Map incorrecta2 = new HashMap();
     static int numeroPreguntas;
     static int [] arrayNumeros;
     
@@ -262,6 +268,11 @@ public class TestCarnetA extends javax.swing.JFrame {
                 var sentencia = conexion.prepareStatement(sentenciaBuscar);
                 var resultado = sentencia.executeQuery();
                 if (resultado.next()) {
+                    pregunta.put(i, resultado.getString("pregunta"));
+                    respuesta.put(i, resultado.getString("respuesta"));
+                    incorrecta1.put(i, resultado.getString("incorrecta1"));
+                    incorrecta2.put(i, resultado.getString("incorrecta2"));
+                    
                     System.out.println("PREGUNTA: " + resultado.getString("pregunta"));
                     System.out.println("RESPUESTA: " + resultado.getString("respuesta"));
                     System.out.println("INCORRECTA1: " + resultado.getString("incorrecta1"));
