@@ -1,5 +1,7 @@
 package practicafinaldein;
 
+import java.util.*;
+
 /**
  * @date 2 feb. 2022
  * @author Jhoan López
@@ -8,18 +10,17 @@ package practicafinaldein;
 
 public class CarnetAPantalla extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BienvenidosPantalla
-     */
     public CarnetAPantalla() {
         initComponents();
+        AsignarImagen asignarImg = new AsignarImagen();
         asignarImg.asignarImagenes("CarnetA.png", jl_categoriaElegida);
         buttonGroup.add(jrb_15preguntas);
         buttonGroup.add(jrb_20preguntas);
         buttonGroup.add(jrb_25preguntas);
     }
     
-    AsignarImagen asignarImg = new AsignarImagen();
+    public static Map opcionElegidaA = new HashMap();
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -222,13 +223,19 @@ public class CarnetAPantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_minimizarMouseClicked
 
     private void jb_empezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_empezarActionPerformed
+        
+        
         if (jrb_15preguntas.isSelected()) {
-
+            opcionElegidaA.put(1, 15);
         } else if (jrb_20preguntas.isSelected()) {
-
+            opcionElegidaA.put(1, 20);
         } else if (jrb_25preguntas.isSelected()) {
-
+            opcionElegidaA.put(1, 25);
         }
+        
+        TestCarnetA testA = new TestCarnetA();
+        testA.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jb_empezarActionPerformed
 
     /**

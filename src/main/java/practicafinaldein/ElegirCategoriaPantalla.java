@@ -13,11 +13,11 @@ public class ElegirCategoriaPantalla extends javax.swing.JFrame {
      */
     public ElegirCategoriaPantalla() {
         initComponents();
-
+        AsignarImagen asignarImg = new AsignarImagen();
         asignarImg.asignarImagenes("ElegirCategoria.png", jl_categoriaElegida);
     }
     
-    AsignarImagen asignarImg = new AsignarImagen();
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
