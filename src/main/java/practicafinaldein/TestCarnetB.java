@@ -330,13 +330,6 @@ public class TestCarnetB extends javax.swing.JFrame {
                     respuestaB.put(i, resultado.getString("respuesta"));
                     incorrecta1B.put(i, resultado.getString("incorrecta1"));
                     incorrecta2B.put(i, resultado.getString("incorrecta2"));
-                    
-                    System.out.println("PREGUNTA: " + resultado.getString("pregunta"));
-                    System.out.println("RESPUESTA: " + resultado.getString("respuesta"));
-                    System.out.println("INCORRECTA1: " + resultado.getString("incorrecta1"));
-                    System.out.println("INCORRECTA2: " + resultado.getString("incorrecta2"));
-                    System.out.println(cont);
-                    System.out.println("--------------------------------------------------------------------------------------------------------");
                     cont++;
                 }
             }
