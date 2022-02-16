@@ -262,7 +262,6 @@ public class TestCarnetB extends javax.swing.JFrame {
                     preguntasAcertadasB++;
                 }
                 preguntaActual++;
-                System.out.println(preguntasAcertadasB);
                 this.asignarPreguntas(preguntaActual);
             } else if (numeroPreguntas == (preguntaActual + 1)) {
                 if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals("<html><p style=\"width:250px\">" + respuestaB.get(preguntaActual) + "</p></html>")) {
@@ -364,7 +363,6 @@ public class TestCarnetB extends javax.swing.JFrame {
             }
             if(!existe){
                 arrayNumeros[contador] = aleatorio;
-                System.out.println("Numero Random " + contador + " :" + aleatorio);
             }
             contador++;
         }

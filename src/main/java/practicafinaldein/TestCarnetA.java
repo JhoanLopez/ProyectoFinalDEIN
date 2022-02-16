@@ -378,7 +378,6 @@ public class TestCarnetA extends javax.swing.JFrame {
             }
             if(!existe){
                 arrayNumeros[contador] = aleatorio;
-                System.out.println("Numero Random " + contador + " :" + aleatorio);
             }
             contador++;
         }
