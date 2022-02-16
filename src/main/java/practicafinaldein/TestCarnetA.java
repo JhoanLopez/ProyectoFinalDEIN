@@ -31,9 +31,12 @@ public class TestCarnetA extends javax.swing.JFrame {
     public static Map respuestaA = new HashMap();
     public static Map incorrecta1A = new HashMap();
     public static Map incorrecta2A = new HashMap();
+    static int preguntasAcertadasA = 0;
     static int preguntaActual = 0;
     static int numeroPreguntas;
     static int [] arrayNumeros;
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,6 +59,7 @@ public class TestCarnetA extends javax.swing.JFrame {
         jrb_opcionC = new javax.swing.JRadioButton();
         jb_salir = new javax.swing.JButton();
         jb_siguiente = new javax.swing.JButton();
+        jl_informacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 600));
@@ -116,12 +120,18 @@ public class TestCarnetA extends javax.swing.JFrame {
         jl_pregunta.setForeground(new java.awt.Color(102, 102, 102));
         jl_pregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_pregunta.setText("¿PREGUNTA?");
+        jl_pregunta.setPreferredSize(new java.awt.Dimension(520, 30));
 
         jPanel1.setBackground(new java.awt.Color(248, 249, 249));
 
         jrb_opcionA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionA.setForeground(new java.awt.Color(102, 102, 102));
         jrb_opcionA.setText("OPCIÓN A");
+        jrb_opcionA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrb_opcionAActionPerformed(evt);
+            }
+        });
 
         jrb_opcionB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionB.setForeground(new java.awt.Color(102, 102, 102));
@@ -186,10 +196,19 @@ public class TestCarnetA extends javax.swing.JFrame {
             }
         });
 
+        jl_informacion.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jl_informacion.setForeground(new java.awt.Color(153, 0, 0));
+        jl_informacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_informacion.setPreferredSize(new java.awt.Dimension(0, 30));
+
         javax.swing.GroupLayout jp_fondoFrameLayout = new javax.swing.GroupLayout(jp_fondoFrame);
         jp_fondoFrame.setLayout(jp_fondoFrameLayout);
         jp_fondoFrameLayout.setHorizontalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
+                .addGap(0, 540, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(545, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,18 +216,17 @@ public class TestCarnetA extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
-                        .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120)
-                        .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
+                                .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(120, 120, 120)
+                                .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(340, 340, 340))))
-            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jl_pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jl_pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jp_fondoFrameLayout.setVerticalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,14 +234,16 @@ public class TestCarnetA extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(112, 112, 112)
-                .addComponent(jl_pregunta)
-                .addGap(100, 100, 100)
+                .addComponent(jl_pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
 
         getContentPane().add(jp_fondoFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -246,18 +266,61 @@ public class TestCarnetA extends javax.swing.JFrame {
         CarnetAPantalla.opcionElegidaA.clear();
         elegirCategoria.setVisible(true);
         this.setVisible(false);
+        preguntasAcertadasA = 0;
+        preguntaActual = 0;
     }//GEN-LAST:event_jb_salirActionPerformed
 
     private void jb_siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_siguienteActionPerformed
-        if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals("")) {
-            
-        } else if (jrb_opcionB.isSelected() && jrb_opcionA.getText().equals("")) {
+        jl_informacion.setText("");
+        if (buttonGroup.getSelection() != null ) { 
+            if (numeroPreguntas > preguntaActual + 1) {
 
-        } else if (jrb_opcionC.isSelected() && jrb_opcionA.getText().equals("")) {
-
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaA.get(preguntaActual))) {
+                    preguntasAcertadasA++;
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaA.get(preguntaActual))) {
+                    preguntasAcertadasA++;
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaA.get(preguntaActual))) {
+                    preguntasAcertadasA++;
+                }
+                preguntaActual++;
+                
+                System.out.println(preguntasAcertadasA);
+                this.asignarPreguntas(preguntaActual);   
+            }  else if (numeroPreguntas == (preguntaActual + 1)) {
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaA.get(preguntaActual))) {
+                    preguntasAcertadasA++;
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaA.get(preguntaActual))) {
+                    preguntasAcertadasA++;
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaA.get(preguntaActual))) {
+                    preguntasAcertadasA++;
+                } 
+                preguntaActual++;
+                
+                if (preguntasAcertadasA >= (numeroPreguntas - 3)) {
+                    System.out.println("Examen aprovado");
+                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasA);
+                    LlamadaDeClases pantalla = new LlamadaDeClases();
+                    pantalla.aprobadoPantalla(this);
+                    preguntasAcertadasA = 0;
+                    preguntaActual = 0;
+                } else {
+                    System.out.println("Examen suspendido");
+                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasA);
+                    LlamadaDeClases pantalla = new LlamadaDeClases();
+                    pantalla.aprobadoPantalla(this);
+                    preguntasAcertadasA = 0;
+                    preguntaActual = 0;
+                }
+            }
+        } else {
+            String mensaje = "Tienes que seleccionar alguna de las opciones.";
+            jl_informacion.setText(mensaje);
         }
-        
     }//GEN-LAST:event_jb_siguienteActionPerformed
+
+    private void jrb_opcionAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_opcionAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrb_opcionAActionPerformed
     
     private void getPreguntas (Integer num){
         Connection conexion = null;
@@ -286,7 +349,6 @@ public class TestCarnetA extends javax.swing.JFrame {
                     cont++;
                 }
             }
-            System.out.println("Se hizo todo bien");
             conexion.close();
         } catch (SQLException ex) {
             System.out.println("Error al buscar preguntas");
@@ -323,6 +385,10 @@ public class TestCarnetA extends javax.swing.JFrame {
         jrb_opcionC.setText((String) incorrecta2A.get(num));
     }
     
+
+        
+
+    
     /**
      * @param args the command line arguments
      */
@@ -348,71 +414,8 @@ public class TestCarnetA extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TestCarnetA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -428,6 +431,7 @@ public class TestCarnetA extends javax.swing.JFrame {
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_siguiente;
     private javax.swing.JLabel jl_cerrar;
+    private javax.swing.JLabel jl_informacion;
     private javax.swing.JLabel jl_minimizar;
     private javax.swing.JLabel jl_pregunta;
     private javax.swing.JPanel jp_fondoFrame;

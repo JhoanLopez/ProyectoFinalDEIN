@@ -42,6 +42,7 @@ public class CarnetAPantalla extends javax.swing.JFrame {
         jrb_20preguntas = new javax.swing.JRadioButton();
         jrb_25preguntas = new javax.swing.JRadioButton();
         jb_empezar = new javax.swing.JButton();
+        jl_informacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 600));
@@ -166,19 +167,15 @@ public class CarnetAPantalla extends javax.swing.JFrame {
             }
         });
 
+        jl_informacion.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jl_informacion.setForeground(new java.awt.Color(153, 0, 0));
+        jl_informacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_informacion.setPreferredSize(new java.awt.Dimension(0, 30));
+
         javax.swing.GroupLayout jp_fondoFrameLayout = new javax.swing.GroupLayout(jp_fondoFrame);
         jp_fondoFrame.setLayout(jp_fondoFrameLayout);
         jp_fondoFrameLayout.setHorizontalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
-                .addGap(340, 340, 340)
-                .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(340, 340, 340))))
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_fondoFrameLayout.createSequentialGroup()
@@ -191,6 +188,17 @@ public class CarnetAPantalla extends javax.swing.JFrame {
                         .addGap(500, 500, 500)
                         .addComponent(jb_empezar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(410, 410, 410))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
+                .addGap(340, 340, 340)
+                .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
+                        .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(340, 340, 340))))
         );
         jp_fondoFrameLayout.setVerticalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,11 +207,13 @@ public class CarnetAPantalla extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(jl_categoriaElegida, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jb_empezar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
         );
@@ -223,19 +233,23 @@ public class CarnetAPantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_minimizarMouseClicked
 
     private void jb_empezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_empezarActionPerformed
-        
-        
-        if (jrb_15preguntas.isSelected()) {
-            opcionElegidaA.put(1, 15);
-        } else if (jrb_20preguntas.isSelected()) {
-            opcionElegidaA.put(1, 20);
-        } else if (jrb_25preguntas.isSelected()) {
-            opcionElegidaA.put(1, 25);
+        jl_informacion.setText("");
+        if (buttonGroup.getSelection() != null ) {
+            
+            if (jrb_15preguntas.isSelected()) {
+                opcionElegidaA.put(1, 15);
+            } else if (jrb_20preguntas.isSelected()) {
+                opcionElegidaA.put(1, 20);
+            } else if (jrb_25preguntas.isSelected()) {
+                opcionElegidaA.put(1, 25);
+            }
+            TestCarnetA testA = new TestCarnetA();
+            testA.setVisible(true);
+            this.setVisible(false);
+        } else {
+            String mensaje = "Tienes que seleccionar alguna de las opciones.";
+            jl_informacion.setText(mensaje);
         }
-        
-        TestCarnetA testA = new TestCarnetA();
-        testA.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_jb_empezarActionPerformed
 
     /**
@@ -265,36 +279,8 @@ public class CarnetAPantalla extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -312,6 +298,7 @@ public class CarnetAPantalla extends javax.swing.JFrame {
     private javax.swing.JButton jb_empezar;
     private javax.swing.JLabel jl_categoriaElegida;
     private javax.swing.JLabel jl_cerrar;
+    private javax.swing.JLabel jl_informacion;
     private javax.swing.JLabel jl_minimizar;
     private javax.swing.JPanel jp_fondoFrame;
     private javax.swing.JRadioButton jrb_15preguntas;

@@ -29,6 +29,7 @@ public class TestCarnetB extends javax.swing.JFrame {
     public static Map respuestaB = new HashMap();
     public static Map incorrecta1B = new HashMap();
     public static Map incorrecta2B = new HashMap();
+    static int preguntasAcertadasB = 0;
     static int numeroPreguntas;
     static int preguntaActual = 0;
     static int [] arrayNumeros;
@@ -54,6 +55,7 @@ public class TestCarnetB extends javax.swing.JFrame {
         jrb_opcionC = new javax.swing.JRadioButton();
         jb_salir = new javax.swing.JButton();
         jb_siguiente = new javax.swing.JButton();
+        jl_informacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 600));
@@ -114,41 +116,46 @@ public class TestCarnetB extends javax.swing.JFrame {
         jl_pregunta.setForeground(new java.awt.Color(102, 102, 102));
         jl_pregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_pregunta.setText("¿PREGUNTA?");
+        jl_pregunta.setPreferredSize(new java.awt.Dimension(520, 30));
 
         jPanel1.setBackground(new java.awt.Color(248, 249, 249));
+        jPanel1.setPreferredSize(new java.awt.Dimension(130, 135));
 
         jrb_opcionA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionA.setForeground(new java.awt.Color(102, 102, 102));
         jrb_opcionA.setText("OPCIÓN A");
+        jrb_opcionA.setPreferredSize(new java.awt.Dimension(120, 29));
 
         jrb_opcionB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionB.setForeground(new java.awt.Color(102, 102, 102));
         jrb_opcionB.setText("OPCIÓN B");
+        jrb_opcionB.setPreferredSize(new java.awt.Dimension(120, 29));
 
         jrb_opcionC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionC.setForeground(new java.awt.Color(102, 102, 102));
         jrb_opcionC.setText("OPCIÓN C");
+        jrb_opcionC.setPreferredSize(new java.awt.Dimension(120, 29));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jrb_opcionA)
-                    .addComponent(jrb_opcionC)
-                    .addComponent(jrb_opcionB)))
+                    .addComponent(jrb_opcionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_opcionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_opcionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jrb_opcionA)
+                .addComponent(jrb_opcionA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jrb_opcionB)
+                .addComponent(jrb_opcionB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jrb_opcionC)
+                .addComponent(jrb_opcionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -184,28 +191,36 @@ public class TestCarnetB extends javax.swing.JFrame {
             }
         });
 
+        jl_informacion.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jl_informacion.setForeground(new java.awt.Color(153, 0, 0));
+        jl_informacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_informacion.setPreferredSize(new java.awt.Dimension(0, 30));
+
         javax.swing.GroupLayout jp_fondoFrameLayout = new javax.swing.GroupLayout(jp_fondoFrame);
         jp_fondoFrame.setLayout(jp_fondoFrameLayout);
         jp_fondoFrameLayout.setHorizontalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
+            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
-                        .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120)
-                        .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
+                                .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(120, 120, 120)
+                                .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(340, 340, 340))))
+            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
+                .addContainerGap(535, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(535, Short.MAX_VALUE))
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jl_pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp_fondoFrameLayout.setVerticalGroup(
@@ -213,15 +228,17 @@ public class TestCarnetB extends javax.swing.JFrame {
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(jl_pregunta)
-                .addGap(100, 100, 100)
+                .addGap(111, 111, 111)
+                .addComponent(jl_pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
 
         getContentPane().add(jp_fondoFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -231,6 +248,62 @@ public class TestCarnetB extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jb_siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_siguienteActionPerformed
+        jl_informacion.setText("");
+        if (buttonGroup.getSelection() != null ) { 
+            if (numeroPreguntas > (preguntaActual + 1)) {
+
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaB.get(preguntaActual))) {
+                    preguntasAcertadasB++;
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaB.get(preguntaActual))) {
+                    preguntasAcertadasB++;
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaB.get(preguntaActual))) {
+                    preguntasAcertadasB++;
+                }
+                preguntaActual++;
+                System.out.println(preguntasAcertadasB);
+                this.asignarPreguntas(preguntaActual);
+            } else if (numeroPreguntas == (preguntaActual + 1)) {
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaB.get(preguntaActual))) {
+                    preguntasAcertadasB++;
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaB.get(preguntaActual))) {
+                    preguntasAcertadasB++;
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaB.get(preguntaActual))) {
+                    preguntasAcertadasB++;
+                }
+                preguntaActual++;
+                
+                if (preguntasAcertadasB >= (numeroPreguntas - 3)) {
+                    System.out.println("Examen aprovado");
+                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasB);
+                    LlamadaDeClases pantalla = new LlamadaDeClases();
+                    pantalla.aprobadoPantalla(this);
+                    preguntasAcertadasB = 0;
+                    preguntaActual = 0;
+                } else {
+                    System.out.println("Examen suspendido");
+                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasB);
+                    LlamadaDeClases pantalla = new LlamadaDeClases();
+                    pantalla.aprobadoPantalla(this);
+                    preguntasAcertadasB = 0;
+                    preguntaActual = 0;
+                }
+            }
+        } else {
+            String mensaje = "Tienes que seleccionar alguna de las opciones.";
+            jl_informacion.setText(mensaje);
+        }
+    }//GEN-LAST:event_jb_siguienteActionPerformed
+
+    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
+        ElegirCategoriaPantalla elegirCategoria = new ElegirCategoriaPantalla();
+        CarnetBPantalla.opcionElegidaB.clear();
+        elegirCategoria.setVisible(true);
+        this.setVisible(false);
+        preguntasAcertadasB = 0;
+        preguntaActual = 0;
+    }//GEN-LAST:event_jb_salirActionPerformed
+
     private void jl_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_cerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_jl_cerrarMouseClicked
@@ -238,24 +311,6 @@ public class TestCarnetB extends javax.swing.JFrame {
     private void jl_minimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_minimizarMouseClicked
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jl_minimizarMouseClicked
-
-    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
-        ElegirCategoriaPantalla elegirCategoria = new ElegirCategoriaPantalla();
-        CarnetBPantalla.opcionElegidaB.clear();
-        elegirCategoria.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jb_salirActionPerformed
-
-    private void jb_siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_siguienteActionPerformed
-        if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals("")) {
-            
-        } else if (jrb_opcionB.isSelected() && jrb_opcionA.getText().equals("")) {
-
-        } else if (jrb_opcionC.isSelected() && jrb_opcionA.getText().equals("")) {
-
-        }
-        
-    }//GEN-LAST:event_jb_siguienteActionPerformed
     
     private void getPreguntas (Integer num){
         Connection conexion = null;
@@ -284,7 +339,6 @@ public class TestCarnetB extends javax.swing.JFrame {
                     cont++;
                 }
             }
-            System.out.println("Se hizo todo bien");
             conexion.close();
         } catch (SQLException ex) {
             System.out.println("Error al buscar preguntas");
@@ -346,134 +400,7 @@ public class TestCarnetB extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TestCarnetB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -490,6 +417,7 @@ public class TestCarnetB extends javax.swing.JFrame {
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_siguiente;
     private javax.swing.JLabel jl_cerrar;
+    private javax.swing.JLabel jl_informacion;
     private javax.swing.JLabel jl_minimizar;
     private javax.swing.JLabel jl_pregunta;
     private javax.swing.JPanel jp_fondoFrame;
