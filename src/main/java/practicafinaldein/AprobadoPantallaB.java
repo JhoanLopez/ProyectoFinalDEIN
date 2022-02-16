@@ -6,16 +6,16 @@ package practicafinaldein;
  * @email Jhoanlopezclase@gmail.com
  */
 
-public class AprobadoPantallaA extends javax.swing.JFrame {
+public class AprobadoPantallaB extends javax.swing.JFrame {
 
     /**
      * Creates new form BienvenidosPantalla
      */
-    public AprobadoPantallaA() {
+    public AprobadoPantallaB() {
         initComponents();
         AsignarImagen asignarImg = new AsignarImagen();
-        resultado = (String) TestCarnetA.aprobadoSuspendidoA.get(1);
-        res = (String) TestCarnetA.aprobadoSuspendidoA.get(2);
+        resultado = (String) TestCarnetB.aprobadoSuspendidoB.get(1);
+        res = (String) TestCarnetB.aprobadoSuspendidoB.get(2);
         jl_informacion.setText(resultado);
         
         if (res.equalsIgnoreCase("aprobado")) {
@@ -192,7 +192,7 @@ public class AprobadoPantallaA extends javax.swing.JFrame {
 
     private void jb_elegirCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_elegirCategoriaActionPerformed
         LlamadaDeClases pantalla = new LlamadaDeClases();
-        TestCarnetA.aprobadoSuspendidoA.clear();
+        TestCarnetB.aprobadoSuspendidoB.clear();
         pantalla.elegirCategoria(this);
         
     }//GEN-LAST:event_jb_elegirCategoriaActionPerformed
@@ -207,7 +207,7 @@ public class AprobadoPantallaA extends javax.swing.JFrame {
 
     private void jb_hacerOtroTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_hacerOtroTestActionPerformed
         LlamadaDeClases pantalla = new LlamadaDeClases();
-        TestCarnetA.aprobadoSuspendidoA.clear();
+        TestCarnetB.aprobadoSuspendidoB.clear();
         pantalla.carnetAPantalla(this);
         
     }//GEN-LAST:event_jb_hacerOtroTestActionPerformed
@@ -229,21 +229,23 @@ public class AprobadoPantallaA extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AprobadoPantallaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AprobadoPantallaB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AprobadoPantallaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AprobadoPantallaB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AprobadoPantallaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AprobadoPantallaB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AprobadoPantallaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AprobadoPantallaB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+
 
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AprobadoPantallaA().setVisible(true);
+                new AprobadoPantallaB().setVisible(true);
             }
         });
     }

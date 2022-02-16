@@ -29,6 +29,7 @@ public class TestCarnetB extends javax.swing.JFrame {
     public static Map respuestaB = new HashMap();
     public static Map incorrecta1B = new HashMap();
     public static Map incorrecta2B = new HashMap();
+    public static Map aprobadoSuspendidoB = new HashMap();
     static int preguntasAcertadasB = 0;
     static int numeroPreguntas;
     static int preguntaActual = 0;
@@ -253,39 +254,38 @@ public class TestCarnetB extends javax.swing.JFrame {
         jl_informacion.setText("");
         if (buttonGroup.getSelection() != null ) { 
             if (numeroPreguntas > (preguntaActual + 1)) {
-
-                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaB.get(preguntaActual))) {
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals("<html><p style=\"width:250px\">" + respuestaB.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasB++;
-                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaB.get(preguntaActual))) {
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals("<html><p style=\"width:250px\">" + respuestaB.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasB++;
-                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaB.get(preguntaActual))) {
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals("<html><p style=\"width:250px\">" + respuestaB.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasB++;
                 }
                 preguntaActual++;
                 System.out.println(preguntasAcertadasB);
                 this.asignarPreguntas(preguntaActual);
             } else if (numeroPreguntas == (preguntaActual + 1)) {
-                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaB.get(preguntaActual))) {
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals("<html><p style=\"width:250px\">" + respuestaB.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasB++;
-                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaB.get(preguntaActual))) {
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals("<html><p style=\"width:250px\">" + respuestaB.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasB++;
-                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaB.get(preguntaActual))) {
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals("<html><p style=\"width:250px\">" + respuestaB.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasB++;
                 }
                 preguntaActual++;
                 
                 if (preguntasAcertadasB >= (numeroPreguntas - 3)) {
-                    System.out.println("Examen aprovado");
-                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasB);
+                    aprobadoSuspendidoB.put(1, "Enhorabuena, has acertado " + preguntasAcertadasB + " preguntas." );
+                    aprobadoSuspendidoB.put(2, "aprobado");
                     LlamadaDeClases pantalla = new LlamadaDeClases();
-                    pantalla.aprobadoPantalla(this);
+                    pantalla.aprobadoPantallaB(this);
                     preguntasAcertadasB = 0;
                     preguntaActual = 0;
                 } else {
-                    System.out.println("Examen suspendido");
-                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasB);
+                    aprobadoSuspendidoB.put(1, "Lo sentimos, tuviste " + (numeroPreguntas - preguntasAcertadasB) + " preguntas falladas." );
+                    aprobadoSuspendidoB.put(2, "suspendido");
                     LlamadaDeClases pantalla = new LlamadaDeClases();
-                    pantalla.aprobadoPantalla(this);
+                    pantalla.aprobadoPantallaB(this);
                     preguntasAcertadasB = 0;
                     preguntaActual = 0;
                 }
@@ -295,6 +295,7 @@ public class TestCarnetB extends javax.swing.JFrame {
             jl_informacion.setText(mensaje);
         }
         buttonGroup.clearSelection();
+        CarnetBPantalla.opcionElegidaB.clear();
     }//GEN-LAST:event_jb_siguienteActionPerformed
 
     private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
@@ -337,7 +338,6 @@ public class TestCarnetB extends javax.swing.JFrame {
                     System.out.println("INCORRECTA2: " + resultado.getString("incorrecta2"));
                     System.out.println(cont);
                     System.out.println("--------------------------------------------------------------------------------------------------------");
-              
                     cont++;
                 }
             }

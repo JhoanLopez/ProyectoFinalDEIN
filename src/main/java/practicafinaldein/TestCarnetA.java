@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-import static practicafinaldein.TestCarnetB.preguntaActual;
 
 /**
  * @date 2 feb. 2022
@@ -31,6 +30,7 @@ public class TestCarnetA extends javax.swing.JFrame {
     public static Map respuestaA = new HashMap();
     public static Map incorrecta1A = new HashMap();
     public static Map incorrecta2A = new HashMap();
+    public static Map aprobadoSuspendidoA = new HashMap();
     static int preguntasAcertadasA = 0;
     static int preguntaActual = 0;
     static int numeroPreguntas;
@@ -281,39 +281,37 @@ public class TestCarnetA extends javax.swing.JFrame {
         if (buttonGroup.getSelection() != null ) { 
             if (numeroPreguntas > preguntaActual + 1) {
 
-                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaA.get(preguntaActual))) {
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals("<html><p style=\"width:250px\">" + respuestaA.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasA++;
-                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaA.get(preguntaActual))) {
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals("<html><p style=\"width:250px\">" + respuestaA.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasA++;
-                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaA.get(preguntaActual))) {
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals("<html><p style=\"width:250px\">" + respuestaA.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasA++;
                 }
                 preguntaActual++;
-                
-                System.out.println(preguntasAcertadasA);
                 this.asignarPreguntas(preguntaActual);   
             }  else if (numeroPreguntas == (preguntaActual + 1)) {
-                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals(respuestaA.get(preguntaActual))) {
+                if (jrb_opcionA.isSelected() && jrb_opcionA.getText().equals("<html><p style=\"width:250px\">" + respuestaA.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasA++;
-                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals(respuestaA.get(preguntaActual))) {
+                } else if (jrb_opcionB.isSelected() && jrb_opcionB.getText().equals("<html><p style=\"width:250px\">" + respuestaA.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasA++;
-                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals(respuestaA.get(preguntaActual))) {
+                } else if (jrb_opcionC.isSelected() && jrb_opcionC.getText().equals("<html><p style=\"width:250px\">" + respuestaA.get(preguntaActual) + "</p></html>")) {
                     preguntasAcertadasA++;
                 } 
                 preguntaActual++;
                 
                 if (preguntasAcertadasA >= (numeroPreguntas - 3)) {
-                    System.out.println("Examen aprovado");
-                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasA);
+                    aprobadoSuspendidoA.put(1, "Enhorabuena, has acertado " + preguntasAcertadasA + " preguntas." );
+                    aprobadoSuspendidoA.put(2, "aprobado");
                     LlamadaDeClases pantalla = new LlamadaDeClases();
-                    pantalla.aprobadoPantalla(this);
+                    pantalla.aprobadoPantallaA(this);
                     preguntasAcertadasA = 0;
                     preguntaActual = 0;
                 } else {
-                    System.out.println("Examen suspendido");
-                    System.out.println("Número preguntas acertadas: " + preguntasAcertadasA);
+                    aprobadoSuspendidoA.put(1, "Lo sentimos, tuviste " + (numeroPreguntas - preguntasAcertadasA) + " preguntas falladas." );
+                    aprobadoSuspendidoA.put(2, "suspendido");
                     LlamadaDeClases pantalla = new LlamadaDeClases();
-                    pantalla.aprobadoPantalla(this);
+                    pantalla.aprobadoPantallaA(this);
                     preguntasAcertadasA = 0;
                     preguntaActual = 0;
                 }
@@ -323,6 +321,7 @@ public class TestCarnetA extends javax.swing.JFrame {
             jl_informacion.setText(mensaje);
         }
         buttonGroup.clearSelection();
+        CarnetAPantalla.opcionElegidaA.clear();
     }//GEN-LAST:event_jb_siguienteActionPerformed
 
     private void jrb_opcionAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_opcionAActionPerformed

@@ -17,14 +17,14 @@ public class LlamadaDeClases {
         clase.setVisible(false);
     }
     
-    public void aprobadoPantalla(JFrame clase) {
+    public void aprobadoPantallaA(JFrame clase) {
         AprobadoPantallaA aprobado = new AprobadoPantallaA();
         aprobado.setVisible(true);
         clase.setVisible(false);
     }
     
-    public void suspendidoPantalla(JFrame clase) {
-        AprobadoPantallaA aprobado = new AprobadoPantallaA();
+    public void aprobadoPantallaB(JFrame clase) {
+        AprobadoPantallaB aprobado = new AprobadoPantallaB();
         aprobado.setVisible(true);
         clase.setVisible(false);
     }
