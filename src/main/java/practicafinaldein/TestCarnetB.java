@@ -119,7 +119,7 @@ public class TestCarnetB extends javax.swing.JFrame {
         jl_pregunta.setPreferredSize(new java.awt.Dimension(520, 30));
 
         jPanel1.setBackground(new java.awt.Color(248, 249, 249));
-        jPanel1.setPreferredSize(new java.awt.Dimension(130, 135));
+        jPanel1.setPreferredSize(new java.awt.Dimension(150, 135));
 
         jrb_opcionA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionA.setForeground(new java.awt.Color(102, 102, 102));
@@ -129,34 +129,35 @@ public class TestCarnetB extends javax.swing.JFrame {
         jrb_opcionB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionB.setForeground(new java.awt.Color(102, 102, 102));
         jrb_opcionB.setText("OPCIÓN B");
-        jrb_opcionB.setPreferredSize(new java.awt.Dimension(120, 29));
+        jrb_opcionB.setPreferredSize(new java.awt.Dimension(125, 29));
 
         jrb_opcionC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionC.setForeground(new java.awt.Color(102, 102, 102));
         jrb_opcionC.setText("OPCIÓN C");
-        jrb_opcionC.setPreferredSize(new java.awt.Dimension(120, 29));
+        jrb_opcionC.setPreferredSize(new java.awt.Dimension(125, 29));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jrb_opcionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jrb_opcionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jrb_opcionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jrb_opcionC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                    .addComponent(jrb_opcionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_opcionA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jrb_opcionA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jrb_opcionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jrb_opcionB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jrb_opcionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jrb_opcionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jrb_opcionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jb_salir.setBackground(new java.awt.Color(204, 204, 204));
@@ -201,7 +202,7 @@ public class TestCarnetB extends javax.swing.JFrame {
         jp_fondoFrameLayout.setHorizontalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(340, Short.MAX_VALUE)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,24 +216,24 @@ public class TestCarnetB extends javax.swing.JFrame {
                                 .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(340, 340, 340))))
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addContainerGap(535, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(535, Short.MAX_VALUE))
-            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jl_pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
+                .addContainerGap(525, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(525, Short.MAX_VALUE))
         );
         jp_fondoFrameLayout.setVerticalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111)
-                .addComponent(jl_pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(jl_pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -293,6 +294,7 @@ public class TestCarnetB extends javax.swing.JFrame {
             String mensaje = "Tienes que seleccionar alguna de las opciones.";
             jl_informacion.setText(mensaje);
         }
+        buttonGroup.clearSelection();
     }//GEN-LAST:event_jb_siguienteActionPerformed
 
     private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
@@ -369,10 +371,15 @@ public class TestCarnetB extends javax.swing.JFrame {
     }
     
     private void asignarPreguntas (Integer num) {
-        jl_pregunta.setText((String) preguntaB.get(num));
-        jrb_opcionA.setText((String) respuestaB.get(num));
-        jrb_opcionB.setText((String) incorrecta1B.get(num));
-        jrb_opcionC.setText((String) incorrecta2B.get(num));
+        String pregunta = (String) preguntaB.get(num);
+        String opcionA = (String) respuestaB.get(num);
+        String opcionB = (String) incorrecta1B.get(num);
+        String opcionC = (String) incorrecta2B.get(num);
+        
+        jl_pregunta.setText("<html><p style=\"width:800px\"><center>" + pregunta + "</center></p></html>");
+        jrb_opcionA.setText("<html><p style=\"width:250px\">" + opcionA + "</p></html>");
+        jrb_opcionB.setText("<html><p style=\"width:250px\">" + opcionB + "</p></html>");
+        jrb_opcionC.setText("<html><p style=\"width:250px\">" + opcionC + "</p></html>");
     }
     
     /**

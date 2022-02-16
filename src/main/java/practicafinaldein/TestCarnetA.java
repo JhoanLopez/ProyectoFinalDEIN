@@ -120,7 +120,8 @@ public class TestCarnetA extends javax.swing.JFrame {
         jl_pregunta.setForeground(new java.awt.Color(102, 102, 102));
         jl_pregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_pregunta.setText("¿PREGUNTA?");
-        jl_pregunta.setPreferredSize(new java.awt.Dimension(520, 30));
+        jl_pregunta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jl_pregunta.setPreferredSize(new java.awt.Dimension(700, 30));
 
         jPanel1.setBackground(new java.awt.Color(248, 249, 249));
 
@@ -140,28 +141,33 @@ public class TestCarnetA extends javax.swing.JFrame {
         jrb_opcionC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jrb_opcionC.setForeground(new java.awt.Color(102, 102, 102));
         jrb_opcionC.setText("OPCIÓN C");
+        jrb_opcionC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jrb_opcionC.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jrb_opcionA)
-                    .addComponent(jrb_opcionC)
-                    .addComponent(jrb_opcionB)))
+                    .addComponent(jrb_opcionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jrb_opcionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jrb_opcionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jrb_opcionA)
+                .addComponent(jrb_opcionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jrb_opcionB)
+                .addComponent(jrb_opcionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jrb_opcionC)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jrb_opcionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jb_salir.setBackground(new java.awt.Color(204, 204, 204));
@@ -205,10 +211,6 @@ public class TestCarnetA extends javax.swing.JFrame {
         jp_fondoFrame.setLayout(jp_fondoFrameLayout);
         jp_fondoFrameLayout.setHorizontalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
-                .addGap(0, 540, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(545, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,21 +225,25 @@ public class TestCarnetA extends javax.swing.JFrame {
                                 .addGap(120, 120, 120)
                                 .addComponent(jb_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(340, 340, 340))))
+            .addGroup(jp_fondoFrameLayout.createSequentialGroup()
+                .addGap(189, 189, 189)
+                .addComponent(jl_pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(189, 189, 189))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoFrameLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jl_pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp_fondoFrameLayout.setVerticalGroup(
             jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_fondoFrameLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(jl_pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(jl_pregunta, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jl_informacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jp_fondoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -316,6 +322,7 @@ public class TestCarnetA extends javax.swing.JFrame {
             String mensaje = "Tienes que seleccionar alguna de las opciones.";
             jl_informacion.setText(mensaje);
         }
+        buttonGroup.clearSelection();
     }//GEN-LAST:event_jb_siguienteActionPerformed
 
     private void jrb_opcionAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_opcionAActionPerformed
@@ -379,10 +386,15 @@ public class TestCarnetA extends javax.swing.JFrame {
     }
     
     private void asignarPreguntas (Integer num) {
-        jl_pregunta.setText((String) preguntaA.get(num));
-        jrb_opcionA.setText((String) respuestaA.get(num));
-        jrb_opcionB.setText((String) incorrecta1A.get(num));
-        jrb_opcionC.setText((String) incorrecta2A.get(num));
+        String pregunta = (String) preguntaA.get(num);
+        String opcionA = (String) respuestaA.get(num);
+        String opcionB = (String) incorrecta1A.get(num);
+        String opcionC = (String) incorrecta2A.get(num);
+        
+        jl_pregunta.setText("<html><p style=\"width:500px\"><center>" + pregunta + "</center></p></html>");
+        jrb_opcionA.setText("<html><p style=\"width:250px\">" + opcionA + "</p></html>");
+        jrb_opcionB.setText("<html><p style=\"width:250px\">" + opcionB + "</p></html>");
+        jrb_opcionC.setText("<html><p style=\"width:250px\">" + opcionC + "</p></html>");
     }
     
 
